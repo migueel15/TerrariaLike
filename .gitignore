@@ -1,0 +1,43 @@
+# Ignore build directories and files
+/build/
+/CMakeFiles/
+/CMakeCache.txt
+/CMakeScripts/
+/*.cmake
+/*.cbp
+/*.layout
+/*.diff
+/*.kdev*
+*.kate-swp
+/.vscode/
+/.idea/
+/.cache/
+
+# Ignore executables and libraries
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+
+# Ignore generated files
+/compile_commands.json
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Visual Studio files (if not using Visual Studio)
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+# Ignore user-specific files
+/.clangd
+
+# Ignore backup files created by text editors
+*~
+
+# Ignore logs and other runtime generated files
+/log/
+
