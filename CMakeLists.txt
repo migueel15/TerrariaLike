@@ -10,7 +10,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(include vendor/glad/include vendor/glfw/include vendor/glm)
 
 # Archivos fuente
-file(GLOB_RECURSE SOURCES "src/*.cpp" "main.cpp")
+file(GLOB_RECURSE SOURCES "src/**/*.cpp" "main.cpp")
 
 # Añadir ejecutable
 add_executable(game ${SOURCES})
