@@ -1,5 +1,4 @@
 #include "engine/window.hpp"
-#include "GLFW/glfw3.h"
 #include "engine/input.hpp"
 #include <iostream>
 
@@ -24,6 +23,11 @@ Window::Window(int width, int height, const char *title) {
   glfwSetKeyCallback(window, keyCallback);
   glfwSetCursorPosCallback(window, cursorPositionCallback);
   glfwSetMouseButtonCallback(window, mouseButtonCallback);
+
+  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    std::cerr << "Failed to initialize GLAD" << std::endl;
+    glfwTerminate();
+  }
 }
 
 Window::~Window() {
