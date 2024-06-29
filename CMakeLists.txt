@@ -33,5 +33,5 @@ target_link_libraries(game glad)
 
 # GLM
 add_subdirectory(vendor/glm)
-target_link_libraries(game glm::glm)
+target_link_libraries(game glm)
 
