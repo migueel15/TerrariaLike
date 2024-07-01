@@ -1,5 +1,7 @@
 #pragma once
 
+#include <glad/glad.h>
+// dont change order
 #include <GLFW/glfw3.h>
 
 class Window {
@@ -12,5 +14,6 @@ public:
   bool shouldClose();
 
 private:
+  static void onResizeWindow(GLFWwindow *window, int width, int height);
   GLFWwindow *window;
 };

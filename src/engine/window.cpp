@@ -20,14 +20,21 @@ Window::Window(int width, int height, const char *title) {
   }
 
   glfwMakeContextCurrent(window);
+
+  // attach callbacks for inputs
   glfwSetKeyCallback(window, keyCallback);
   glfwSetCursorPosCallback(window, cursorPositionCallback);
   glfwSetMouseButtonCallback(window, mouseButtonCallback);
+  glfwSetFramebufferSizeCallback(window, onResizeWindow);
 
+  // init glad
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
     std::cerr << "Failed to initialize GLAD" << std::endl;
     glfwTerminate();
   }
+
+  // set viewport
+  glViewport(0, 0, width, height);
 }
 
 Window::~Window() {
@@ -41,3 +48,7 @@ void Window::update() {
 }
 
 bool Window::shouldClose() { return glfwWindowShouldClose(window); }
+
+void Window::onResizeWindow(GLFWwindow *window, int width, int height) {
+  glViewport(0, 0, width, height);
+}

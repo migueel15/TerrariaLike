@@ -1,17 +1,20 @@
 #pragma once
 
-#include <glad/glad.h>
+#include "glad/glad.h"
 #include <vector>
+
+struct Vertex {
+  float position[3];
+};
 
 class Mesh {
 public:
-  Mesh(std::vector<float> vertices, std::vector<unsigned int> indices);
-  ~Mesh();
+  Mesh(std::vector<Vertex> vertices);
   void draw();
+  void show();
 
 private:
-  std::vector<float> vertices;
-  std::vector<unsigned int> indices;
-  unsigned int VAO, VBO, EBO;
-  void setupMesh();
+  std::vector<Vertex> vertices;
+  unsigned int VAO;
+  unsigned int VBO;
 };

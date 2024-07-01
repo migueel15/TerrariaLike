@@ -1,10 +1,11 @@
 #pragma once
+#include "glad/glad.h"
 
-#include "engine/mesh.hpp"
 class Renderer {
 public:
   Renderer();
-  ~Renderer();
+  void update();
 
-  void renderMesh(Mesh &mesh);
+private:
+  void clearScreen();
 };
