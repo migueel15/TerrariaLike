@@ -1,10 +1,11 @@
 #pragma once
 
 #include "glad/glad.h"
+#include <glm/ext/vector_float3.hpp>
 #include <vector>
 
 struct Vertex {
-  float position[3];
+  glm::vec3 position;
 };
 
 class Mesh {
