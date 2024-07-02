@@ -6,7 +6,10 @@ int main(int argc, char *argv[]) {
 
   std::vector<Vertex> vertices = {
       {.position = {-0.5, -0.5, 0.0}, .texturePos = {0.0, 0.0}},
-      {.position = {0.0, 0.5, 0.0}, .texturePos = {0.5, 1.0}},
+      {.position = {-0.5, 0.5, 0.0}, .texturePos = {0.0, 1.0}},
+      {.position = {0.5, 0.5, 0.0}, .texturePos = {1.0, 1.0}},
+      {.position = {-0.5, -0.5, 0.0}, .texturePos = {0.0, 0.0}},
+      {.position = {0.5, 0.5, 0.0}, .texturePos = {1.0, 1.0}},
       {.position = {0.5, -0.5, 0.0}, .texturePos = {1.0, 0.0}}};
   Texture texture("../assets/sprites/image-test.jpg");
   Mesh mesh(vertices);
