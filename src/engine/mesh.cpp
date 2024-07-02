@@ -15,11 +15,16 @@ Mesh::Mesh(std::vector<Vertex> vertices) {
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
                         (void *)offsetof(Vertex, position));
   glEnableVertexAttribArray(0);
+
+  glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+                        (void *)offsetof(Vertex, texturePos));
+  glEnableVertexAttribArray(1);
 }
 
 void Mesh::draw() {
   glBindVertexArray(VAO);
   glDrawArrays(GL_TRIANGLES, 0, vertices.size());
+  glBindVertexArray(0);
 }
 
 void Mesh::show() {
