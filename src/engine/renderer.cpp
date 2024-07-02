@@ -1,8 +1,4 @@
 #include "engine/renderer.hpp"
-#include "engine/mesh.hpp"
-#include "engine/object.hpp"
-#include "engine/texture.hpp"
-#include <vector>
 
 Renderer::Renderer(Object ob) : ob(ob) {}
 

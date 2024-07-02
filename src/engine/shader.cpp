@@ -1,4 +1,9 @@
 #include "engine/shader.hpp"
+#include "glad/glad.h"
+#include "iostream"
+#include <fstream>
+#include <iostream>
+#include <sstream>
 
 Shader::Shader(const char *vertexPath, const char *fragmentPath) {
   std::string vertexCode;

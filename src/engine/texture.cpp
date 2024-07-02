@@ -1,4 +1,7 @@
 #include "engine/texture.hpp"
+#include "glad/glad.h"
+#include "iostream"
+#include "stb_image.h"
 
 Texture::Texture(const char *path) {
   stbi_set_flip_vertically_on_load(true);

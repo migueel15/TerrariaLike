@@ -1,4 +1,5 @@
 #include "engine/mesh.hpp"
+#include "glad/glad.h"
 #include <iostream>
 
 Mesh::Mesh(std::vector<Vertex> vertices) {

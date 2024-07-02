@@ -1,9 +1,4 @@
 #pragma once
-#include "engine/mesh.hpp"
-#include "iostream"
-#include <fstream>
-#include <iostream>
-#include <sstream>
 #include <string>
 
 class Shader {

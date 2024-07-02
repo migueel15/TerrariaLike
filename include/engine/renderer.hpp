@@ -1,6 +1,5 @@
 #pragma once
 #include "engine/object.hpp"
-#include "glad/glad.h"
 
 class Renderer {
 public:
