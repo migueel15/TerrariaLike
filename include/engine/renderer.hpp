@@ -1,13 +1,14 @@
 #pragma once
 #include "engine/gameObject.hpp"
+#include <vector>
 
 class Renderer {
 public:
-  Renderer(GameObject gObject);
+  Renderer(std::vector<GameObject> objetos);
   void update();
 
 private:
   void clearScreen();
   int active;
-  GameObject ob;
+  std::vector<GameObject> objetos;
 };

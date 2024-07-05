@@ -1,12 +1,13 @@
 #include "engine/renderer.hpp"
-#include "engine/gameObject.hpp"
 #include "glad/glad.h"
 
-Renderer::Renderer(GameObject gObject) : ob(gObject) {}
+Renderer::Renderer(std::vector<GameObject> objetos) { this->objetos = objetos; }
 
 void Renderer::update() {
   clearScreen();
-  ob.draw();
+  for (auto obj = objetos.begin(); obj != objetos.end(); obj++) {
+    obj->draw();
+  }
 }
 
 void Renderer::clearScreen() {

@@ -1,11 +1,10 @@
 #include "engine/gameObject.hpp"
 #include "engine/renderer.hpp"
-#include "engine/transform.hpp"
 #include "engine/window.hpp"
-
-#define PI 3.1415
+#include <vector>
 
 int main(int argc, char *argv[]) {
+  std::vector<GameObject> objetos;
   Window window(800, 600, "TerrariaGL");
 
   std::vector<Vertex> vertices = {
@@ -19,9 +18,12 @@ int main(int argc, char *argv[]) {
   Mesh mesh(vertices);
   Shader shader("../assets/shaders/default.vs", "../assets/shaders/default.fs");
 
-  GameObject gameObject(mesh, shader, texture);
-  gameObject.transform.setScale({5, 5, 5});
-  Renderer renderer(gameObject);
+  GameObject gO1(mesh, shader, texture);
+  GameObject gO2(mesh, shader, texture);
+  gO2.transform.setPosition({.2, 0, 0});
+  objetos.push_back(gO1);
+  objetos.push_back(gO2);
+  Renderer renderer(objetos);
 
   while (!window.shouldClose()) {
     window.update();
