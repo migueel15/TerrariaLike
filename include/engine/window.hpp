@@ -1,8 +1,8 @@
 #pragma once
 
-#include <glad/glad.h>
+#include "glad/glad.h"
 // dont change order
-#include <GLFW/glfw3.h>
+#include "GLFW/glfw3.h"
 
 class Window {
 public:

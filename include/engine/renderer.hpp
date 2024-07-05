@@ -1,13 +1,13 @@
 #pragma once
-#include "engine/object.hpp"
+#include "engine/gameObject.hpp"
 
 class Renderer {
 public:
-  Renderer(Object ob);
+  Renderer(GameObject gObject);
   void update();
 
 private:
   void clearScreen();
   int active;
-  Object ob;
+  GameObject ob;
 };

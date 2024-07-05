@@ -1,6 +1,8 @@
 #include "engine/renderer.hpp"
+#include "engine/gameObject.hpp"
+#include "glad/glad.h"
 
-Renderer::Renderer(Object ob) : ob(ob) {}
+Renderer::Renderer(GameObject gObject) : ob(gObject) {}
 
 void Renderer::update() {
   clearScreen();
