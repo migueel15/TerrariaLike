@@ -1,7 +1,30 @@
 #include "engine/gameObject.hpp"
 #include "engine/renderer.hpp"
 #include "engine/window.hpp"
+#include <unistd.h>
 #include <vector>
+
+#include <chrono>
+#include <iostream>
+
+// Al inicio de tu archivo main o en el ámbito global
+auto lastTime = std::chrono::high_resolution_clock::now();
+int frameCount = 0;
+
+// Función para calcular y mostrar FPS
+void calculateAndPrintFPS() {
+  frameCount++;
+  auto currentTime = std::chrono::high_resolution_clock::now();
+  float deltaTime =
+      std::chrono::duration<float>(currentTime - lastTime).count();
+
+  if (deltaTime >= 1.0f) { // Actualiza cada segundo
+    float fps = frameCount / deltaTime;
+    std::cout << "FPS: " << fps << std::endl;
+    frameCount = 0;
+    lastTime = currentTime;
+  }
+}
 
 int main(int argc, char *argv[]) {
   std::vector<GameObject> objetos;
@@ -27,6 +50,7 @@ int main(int argc, char *argv[]) {
 
   while (!window.shouldClose()) {
     window.update();
+    calculateAndPrintFPS();
     renderer.update();
   }
   return 0;
