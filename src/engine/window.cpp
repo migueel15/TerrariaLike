@@ -20,6 +20,9 @@ Window::Window(int width, int height, const char *title) {
   }
 
   glfwMakeContextCurrent(window);
+  //
+  // quita Vsync
+  glfwSwapInterval(0);
 
   // attach callbacks for inputs
   glfwSetKeyCallback(window, keyCallback);
